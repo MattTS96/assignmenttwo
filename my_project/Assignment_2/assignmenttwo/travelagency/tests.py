@@ -27,11 +27,6 @@ class UserTestCast(TestCase):
         self.assertEqual(user_count, 1)  # ==
         self.assertNotEqual(user_count, 0)  # !=
 
-    # def test_user_password(self):
-    #     self.assertTrue(
-    #         self.user_a.check_password(self.user_a_pw)
-    #     )
-
     def test_user_password(self):
         user_a = User.objects.get(username="Matt")
         self.assertTrue(
@@ -39,13 +34,13 @@ class UserTestCast(TestCase):
         )
 
     def test_login_url(self):
-        # login_url = "/login/"
+        # login_url = "/ /"
         # self.assertEqual(settings.LOGIN_URL, login_url)
         login_url = settings.LOGIN_URL
         # python requests - manage.py runserver
         # self.client.get, self.client.post
         # response = self.client.post(url, {}, follow=True)
-        data = {"username": "cfe", "password": "some_123_password"}
+        data = {"username": "Matt", "password": "some_123_password"}
         response = self.client.post(login_url, data, follow=True)
         # print(dir(response))
         # print(response.request)

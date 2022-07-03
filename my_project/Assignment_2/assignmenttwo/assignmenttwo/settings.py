@@ -62,7 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'assignmenttwo.urls'
 
 LOGIN_URL = "/"
-LOGIN_REDIRECT_URL = "/hi"
+LOGIN_REDIRECT_URL = "/"
 
 TEMPLATES = [
     {
