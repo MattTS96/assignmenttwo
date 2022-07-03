@@ -7,14 +7,18 @@ from django.contrib.auth.decorators import login_required
 from assignmenttwo.settings import AUTH_TOKEN
 
 
+# a login required decorator for pages which can only be accessed when logged in.
 @login_required
 def my_view(request):
     ...
 
 
+# define user model
 User = get_user_model()
 
 
+# Check if the username and password is valid or is already existing.
+# If it is valid, direct to login page. If not return an error.
 def register_view(request):
     form = RegisterForm(request.POST or None)
     if form.is_valid():
@@ -34,6 +38,8 @@ def register_view(request):
     return render(request, "travelagency/register.html", {"form": form})
 
 
+# Check if the username and password is valid or is already existing.
+# If it is valid, direct to chatbot page. If not return an error.
 def login_view(request):
     form = LoginForm(request.POST)
     if form.is_valid():
@@ -53,11 +59,13 @@ def login_view(request):
     return render(request, "travelagency/form.html", {"form": form})
 
 
+# logout and re-direct to login page.
 def logout_view(request):
     logout(request)
     return redirect("/")
 
 
+# Render the chatbot page with and ensure that it can only be accessed when logged in.
 @login_required
 def hi(request):
     return render(request, 'travelagency/hi.html')
