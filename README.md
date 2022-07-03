@@ -20,9 +20,8 @@ Once you have run the server begin the testing process to ensure that the projec
 To activate the test file insert into the command line: python manage.py test. 
 ![image](https://user-images.githubusercontent.com/105397043/177025179-3a2218ca-69ce-4ee4-87e5-a67936e51778.png)
 
- 
 
+### Creating an account; 
 
-
-### The challenges of testing: 
+Once you are able to access the server, create an account. You will then be logged and able to the access the chatbot.   
 
